@@ -1,0 +1,81 @@
+#footer{
+    position: relative;
+    z-index: 100;
+    background-color: #1a508b;
+    margin-top: 9rem;
+    justify-content: center;
+    transform: translateY(rem);
+}
+
+.header{
+    display: inline-block;
+    vertical-align: middle;
+    color: #0061a8;
+}
+
+.placeholder{
+    float: left;
+    font-size: 0.75rem;
+    color: #0061a8;
+    font-weight: bold;
+}
+
+input, textarea{
+    background-color: white;
+    box-sizing: border-box!important;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 5px 0 grey;
+    clear: both;
+}
+
+input:active, input:focus, textarea:active, textarea:focus{
+    box-shadow: 0 0 6px 0 grey;
+}
+
+textarea{
+    resize: none;
+}
+
+.login-signup-button{
+    border: none;
+    outline: none !important;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 0px 7px 0 grey;
+}
+
+.login-signup-button i{
+    color: #0061a8;
+}
+
+.login-signup-button:hover, .login-signup-button:hover i, .enter-buttons{
+    background-color: #0061a8;
+    color: white
+}
+
+#contact-us{
+    position: relative;
+    top: -7rem;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 0 grey;
+    background-color: white;
+}
+
+#copyright{
+    position: relative;
+    bottom: 2rem;
+    color: #ececec
+}
+
+@media only screen and (max-width: 768px){
+    #location{
+        text-align: left;
+        position: relative;
+    top: -5rem;
+    }
+    #social-icons{
+        text-align: center;
+    }
+}

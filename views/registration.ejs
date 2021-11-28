@@ -1,0 +1,111 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/registration.css" />
+
+    <title>JSS WEBAPP</title>
+  </head>
+  <body>
+    <%- include('partials/navbar')  %> 
+    <div class="m-0 p-0 d-none loader">
+      <img src="images/loading.svg" height="60px" width="60px" alt="Loading">
+    </div>
+    <% let alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'] %>
+    <% let icons = ["fas fa-cheese", "fas fa-pizza-slice", "fas fa-cookie", "fas fa-hamburger"] %>
+    <div class="container p-4">
+      <h3 class="ml-1 mr-1 mr-sm-5 mt-4 pl-0 pr-0 pr-sm-5 header">Please answer the below questionnaires carefully. Your risk factor is calculated based on your answers.</h3>
+      <h6 class="ml-3 mt-3 mb-4 requiredField">* required</h6>
+      <div class="m-1 pb-2" id="questionContainer">
+        <form action="/registration" method="post">
+          <% for (let i = 0; i < questions.length; ++i) {%>
+            <% if(questions[i].questionType != 'header' && questions[i].subQuestions) {%> 
+              <h5 class="mx-0 mt-3 question disable-sub-question" data-id=<%= questions[i]._id %>><span class="mb-2 question-number"><%= i+1 %>.</span> <%= questions[i].questionText %> <span class="requiredField">*</span></h5>
+            <% }else { %>
+              <h5 class="mx-0 mt-3 question"><span class="mb-2 question-number"><%= i+1 %>.</span> <%= questions[i].questionText %> <span class="requiredField">*</span></h5>
+            <% } %>
+            <% if(questions[i].questionType == 'input') { %> 
+              <input class="ml-3" type="text" name=<%= questions[i]._id %> required>
+            <% } else if(questions[i].questionType == 'choice') {%> 
+              <% for(let j = 0; j < questions[i].answers.length; ++j) { %>
+                <input class="ml-3 mr-1 myRadio" id=<%= questions[i].answers[j]._id %> type="radio" value=<%= questions[i].answers[j]._id %> name=<%= questions[i]._id %> required>
+                <label for=<%= questions[i].answers[j]._id %>><%= questions[i].answers[j].answer %></label><br>
+              <% } %>
+            <% } %>
+            <% if(questions[i].subQuestions) { %> 
+              <div class="mt-3 ml-4 pl-2" data-main-question=<%= questions[i]._id %>>
+                <% for(let j = 0; j < questions[i].subQuestionsList.length; ++j) { %>
+                  <h6 class="mx-0 mt-3 subQuestion"><span class="mb-2 question-number sub-question-number"><%= alpha[j] %>.</span> <%= questions[i].subQuestionsList[j].questionText %></h6>
+                  <% if(questions[i].subQuestionsList[j].questionType == 'input') { %> 
+                    <input class="ml-3" type="text" name=<%= questions[i].subQuestionsList[j]._id %> required>
+                  <% } else if(questions[i].subQuestionsList[j].questionType == 'choice') {%> 
+                    <% for(let k = 0; k < questions[i].subQuestionsList[j].answers.length; ++k) { %>
+                      <input class="ml-3 mr-1 myRadio" id=<%= questions[i].subQuestionsList[j].answers[k]._id %> type="radio" value=<%= questions[i].subQuestionsList[j].answers[k]._id %> name = <%= questions[i].subQuestionsList[j]._id %> required>
+                      <label for=<%= questions[i].subQuestionsList[j].answers[k]._id %>><%= questions[i].subQuestionsList[j].answers[k].answer %></label><br>
+                    <% } %>
+                  <% } %>
+                <% } %>
+              </div>
+            <% } %> 
+          <% } %>
+          <div id="register-button-container" class="container pr-3">
+            <button type="submit"
+              class="mr-4 p-2"
+              >Register
+              <i class="fas fa-angle-double-right fa-md ml-2"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+      <hr style="border-top: 4px solid #d3e0ea;">
+        <h3 class="header mt-4 pt-2">24 hour Dietary Recall <i class="fas fa-utensils"></i></h3>
+        <div class="row m-0 mt-2 pb-5" style="justify-content: space-between;">
+          <% for (let i = 0; i < dietaryRecall.length; ++i) { %>
+            <div class="col-12 col-sm-5 mt-3 mb-4 mr-0 mr-sm-3 p-4 food-container" id=<%= dietaryRecall[i].dietType %>>
+              <h5 class="my-2" style="color: #0061a8"><%= dietaryRecall[i].dietType %> <i class="ml-2 <%= icons[i] %>"></i> </h5>
+              <% let foodList = dietaryRecall[i].foodList; for (let j = 0; j < foodList.length; ++j) { %>
+                <div class="ml-3 food">
+                  <input class="mt-2 d-none myCheckbox" type="checkbox" id='<%= dietaryRecall[i].dietType %>-<%= foodList[j]._id  %>' >
+                  <label for='<%= dietaryRecall[i].dietType %>-<%= foodList[j]._id  %>' class="check">
+                    <svg width="18px" height="18px" viewBox="0 0 18 18">
+                      <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+                      <polyline points="1 9 7 14 15 4"></polyline>
+                    </svg>
+                  </label>
+                  <label class="mt-3" for='<%= dietaryRecall[i].dietType %>-<%= foodList[j]._id  %>'><%= foodList[j].food  %></label><br>
+                  <input class="ml-3 food-quantity remove-input" type="text" data-answer-id='<%= dietaryRecall[i].dietType %>-<%= foodList[j]._id  %>' required>
+                  <% if (foodList[j].measure != "") { %> 
+                    <span class="food-measure remove-input" data-input-id='<%= dietaryRecall[i].dietType %>-<%= foodList[j]._id  %>'><%= foodList[j].measure %></span><br>
+                  <% } %>
+                </div>
+              <% } %>
+            </div>
+          <% } %>
+        </div>
+    </div>
+
+    <%- include('./partials/footer') %>
+    
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/registration.js"></script>
+  </body>
+</html>

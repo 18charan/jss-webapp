@@ -1,0 +1,222 @@
+.header{
+    font-size: min(1.3rem, 5vw);
+    color: #0061a8;
+    line-height: 2rem;
+}
+
+.requiredField{
+    color: red;
+}
+
+#questionContainer{
+    position: relative;
+}
+
+.question-number{
+    display: inline-block;
+    padding: 0.2rem 0.4rem;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 grey;
+    color: white;
+    background-color: #1a508b;
+    font-size: min(1.1rem, 4vw);
+}
+
+.sub-question-number{
+    font-size: min(0.9rem, 3vw);
+    padding: 0.25rem 0.45rem;
+}
+
+input{
+    padding: 5px;
+    background-color: white;
+    box-sizing: border-box!important;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 5px 0 grey;
+}
+
+.myRadio{
+    position: relative;
+    box-shadow: none;
+    border: none;
+    background-color: #0061a8;
+}
+
+.myRadio:active, .myRadio:focus{
+    box-shadow: none;
+}
+
+.myRadio:after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 0 3px 0 grey;
+    border-radius: 100%;
+    content: '';
+}
+
+.myRadio:checked:after{
+    background-color: #0061a8;
+}
+
+.disable-input{
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+#register-button-container{
+    position: fixed;
+    z-index: 50;
+    bottom: 1.5rem;
+    text-align: right;
+}
+
+#register-button-container button{
+    background-color: white;
+    border: none;
+    outline: none !important;
+    border-radius: 5px;
+    box-shadow: 0px 0px 7px 0 grey;
+    color: #2b2e4a;
+}
+
+#register-button-container button i{
+    color: #0061a8;
+}
+
+#register-button-container button:hover, #register-button-container button:hover i{
+    background-color: #0061a8;
+    color: white
+}
+
+.question, .subQuestion{
+    color: #525252;
+}
+.question{
+    font-size: min(1.3rem, 4.5vw);
+}
+
+.subQuestion{
+    font-size: min(1.1rem, 4vw);
+}
+
+.food-container{
+    box-sizing: border-box!important;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0 rgb(179, 176, 176);
+    max-height: 50vh;
+    overflow-y: scroll;
+}
+
+.food-container::-webkit-scrollbar{
+    width: 17px;
+}
+
+.food-container::-webkit-scrollbar-track{
+    margin: 7px;
+}
+
+.food-container::-webkit-scrollbar-thumb {
+    border: 5px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    border-radius: 7px;
+    background-color: #dddddd;
+}
+
+.food-container::-webkit-scrollbar-button {
+    display: none;
+}
+
+.food{
+    position: relative;
+    width: fit-content;
+}
+
+.food-quantity{
+    width: 4rem;
+    max-width: fit-content;
+    box-sizing: content-box!important;
+    transition: padding 150ms linear ;
+}
+
+.food-measure{
+    pointer-events: none;
+    position: absolute;
+    bottom: 0;
+    right: 3px;
+    padding: 5px;
+    transition: opacity 50ms linear;
+}
+
+.remove-input{
+    height: 0;
+    padding: 0 5px;
+    opacity: 0;
+}
+
+.check{
+  cursor: pointer;
+  position: relative;
+  margin: auto;
+  width: 18px;
+  height: 18px;
+  -webkit-tap-highlight-color: transparent;
+  transform: translate3d(0,0,0);
+}
+
+  .check:before{
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(#1a508b,.03);
+    opacity: 0;
+    transition: opacity .2s ease;
+  }
+  .check svg{
+    position: relative;
+    z-index: 1;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #aab4c9;
+    stroke-width: 1.5;
+    transform: translate3d(0,0,0);
+    transition: all .2s ease;
+  }
+  .check svg path{
+      stroke-dasharray: 60;
+      stroke-dashoffset: 0;
+  }
+  .check svg polyline {
+      stroke-dasharray: 22;
+      stroke-dashoffset: 66;
+  }
+  
+  .check svg:hover:before{
+      opacity: 1;
+  }
+  .check svg:hover svg{
+      stroke: #1a508b;
+  }
+
+.myCheckbox:checked + .check svg{
+    stroke: #1a508b;
+}
+.myCheckbox:checked + .check svg path{
+      stroke-dashoffset: 60;
+      transition: all .3s linear;
+}
+.myCheckbox:checked + .check svg polyline{
+      stroke-dashoffset: 42;
+      transition: all .2s linear;
+      transition-delay: .15s;
+}

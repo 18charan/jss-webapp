@@ -1,0 +1,186 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+
+    <title>JSS WEBAPP</title>
+  </head>
+  <body>
+    <%- include('partials/navbar')  %>
+    <div class="my-4 container">
+      <div class="mb-2 mx-3 mx-sm-0" id="profile">
+        <div class="d-none d-sm-block col-sm-2"></div>
+        <h3 class="py-0 col-auto col-sm-3"><i class="fas fa-user-circle"></i> <%= name  %> </h3>
+        <h3 class="px-2 py-2 col-auto col-sm-2">Age <%= age  %> </h3>
+        <h3 class="py-0 col-auto col-sm-3"><i style="transform: rotate(-25deg)" class="fas fa-phone-volume"></i> <%= phNo %></h3>
+        <div class="d-none d-sm-block col-sm-2"></div>
+        <div class="d-none d-sm-block col-sm-2"></div>
+        <div style="text-align: center;" class="my-2 p-0 col-12 col-sm-8">
+          <button class="px-2 py-1 logout-button"><a style="text-decoration: none" href="/logout">Logout</a></button>
+        </div>
+        <div class="d-none d-sm-block col-sm-2"></div>
+        <div class="d-none d-sm-block col-sm-3"></div>
+        <hr class="px-3 mt-3 col-9 col-sm-6 line">
+        <div class="d-none d-sm-block col-sm-3"></div>
+      </div>
+
+      <div class="p-2 row">
+        <div class="d-none d-sm-block col-sm-2"></div>
+        <h5 class="col-12 col-sm-10 p-0 mb-4 header">Score <i class="fas fa-poll"></i></h5>
+      </div>
+      <div class="p-0 myBox">
+        <div class="d-none d-sm-block col-sm-2"></div>
+        <span class="p-2 value-display"><span><%= score.value %></span></span>
+        <div class="ml-3 ml-sm-4 pl-3 status-display">
+          <h6 class="my-2 status-indicator"><span class="mb-2 py-1 px-2 risk-text risk-MODERATE"><%= score.risk %></span></h6>
+          <ul class="mt-3 mb-0 status-text">
+            <% for( let i = 0; i < score.info.length; ++i ) { %>
+              <li><%= score.info[i] %></li>
+            
+            <% } %>
+          </ul>
+        </div>
+        <div class="d-none d-sm-block col-sm-2"></div>
+      </div>
+
+      <div class="mt-5 p-2 row">
+        <div class="d-none d-sm-block col-sm-2"></div>
+        <h5 class="col-12 col-sm-10 p-0 mb-4 header">HbA1c <i class="fas fa-file-prescription"></i></h5>
+      </div>
+      <div class="p-0 myBox">
+        <div class="d-none d-sm-block col-sm-2"></div>
+        <span class="p-2 value-display">
+          <span><%= hba1c.value %></span>
+          <% if(hba1c.status || hba1c.status == 0) { %>
+            <% if(hba1c.status == 0){ %> 
+              <i class="fas fa-check-circle status-icon status-icon-safe"></i>
+            <% } else if(hba1c.status == 1) { %>
+              <i class="fas fa-exclamation-circle status-icon status-icon-moderate"></i>
+            <% } else if(hba1c.status == 2) { %>
+              <i class="fas fa-exclamation-triangle status-icon status-icon-risk"></i>
+            <% } %>
+          <% } %>
+        </span>
+        <div class="ml-3 ml-sm-4 px-3 status-display">
+          <ul class="mt-3 mb-0 status-text">
+            <% for( let i = 0; i < hba1c.info.length; ++i ) { %>
+              <li><%= hba1c.info[i] %></li>
+            <% } %>
+        </div>
+        <div class="d-none d-sm-block col-sm-2"></div>
+      </div>
+
+      <div class="mt-5 p-2 row">
+        <div class="d-none d-sm-block col-sm-2"></div>
+        <h5 class="col-12 col-sm-10 p-0 mb-4 header">Excercise (in min.) <i class="fas fa-running"></i></h5>
+      </div>
+      <div class="p-0 myBox">
+        <div class="d-none d-sm-block col-sm-2"></div>
+        <span class="p-2 value-display">
+          <span><%= excercise.value %></span>
+          <% if(excercise.status || excercise.status == 0) { %>
+            <% if(excercise.status == 0){ %> 
+              <i class="fas fa-check-circle status-icon status-icon-safe"></i>
+            <% } else if(excercise.status == 1) { %>
+              <i class="fas fa-exclamation-circle status-icon status-icon-moderate"></i>
+            <% } else if(excercise.status == 2) { %>
+              <i class="fas fa-exclamation-triangle status-icon status-icon-risk"></i>
+            <% } %>
+          <% } %>
+        </span>
+        <div class="ml-3 ml-sm-4 px-3 status-display">
+          <ul class="mt-3 mb-0 status-text">
+            <% for( let i = 0; i < excercise.info.length; ++i ) { %>
+              <li><%= excercise.info[i] %></li>
+            <% } %>
+          </ul>
+        </div>
+        <div class="d-none d-sm-block col-sm-2"></div>
+      </div>
+
+      <div class="mt-5 p-2 row">
+        <div class="d-none d-sm-block col-sm-2"></div>
+        <h5 class="col-12 col-sm-10 p-0 mb-4 header">BMI <i class="fas fa-weight"></i></h5>
+      </div>
+      <div class="p-0 myBox">
+        <div class="d-none d-sm-block col-sm-2"></div>
+        <span class="p-2 value-display">
+          <span><%= bmi.value %></span>
+          <% if(bmi.status || bmi.status == 0) { %>
+            <% if(bmi.status == 0){ %> 
+              <i class="fas fa-check-circle status-icon status-icon-safe"></i>
+            <% } else if(bmi.status == 1) { %>
+              <i class="fas fa-exclamation-circle status-icon status-icon-moderate"></i>
+            <% } else if(bmi.status == 2) { %>
+              <i class="fas fa-exclamation-triangle status-icon status-icon-risk"></i>
+            <% } %>
+          <% } %>
+        </span>
+        <div class="ml-3 ml-sm-4 px-3 status-display">
+          <ul class="mt-3 mb-0 status-text">
+            <% for( let i = 0; i < bmi.info.length; ++i ) { %>
+              <li><%= bmi.info[i] %></li>
+            <% } %>
+          </ul>
+        </div>
+        <div class="d-none d-sm-block col-sm-2"></div>
+      </div>
+
+      <div class="mt-5 p-2 row">
+        <div class="d-none d-sm-block col-sm-2"></div>
+        <h5 class="col-12 col-sm-10 p-0 mb-4 header">Calories (in kcal) <i class="fas fa-utensils"></i></h5>
+      </div>
+      <div class="p-0 myBox">
+        <div class="d-none d-sm-block col-sm-2"></div>
+        <span class="p-2 value-display">
+          <span><%= calories.value %></span>
+        </span>
+        <div class="ml-3 ml-sm-4 px-3 status-display">
+          <p>For users with Diabetes Mellitus :</p>
+          <ul class="mt-3 mb-0 status-text">
+            <% for( let i = 0; i < calories.info.length; ++i ) { %>
+              <li><%= calories.info[i] %></li>
+            <% } %>
+          </ul>
+        </div>
+        <div class="d-none d-sm-block col-sm-2"></div>
+      </div>
+
+      <div id="guidelines" class="pb-1 pb-sm-4 my-5">
+        <h4 class="pb-1 mx-auto">Guidelines</h4>
+        <ul class="my-3 mx-auto">
+          <li><i class="mr-1 fas fa-book-medical"></i>Take your medications regularly.</li>
+          <li><i class="mr-1 fas fa-book-medical"></i>Exercise for atleast 150 min per week.</li>
+          <li><i class="mr-1 fas fa-book-medical"></i>Routine checking of blood sugar, urine, BP, visual acuity and weight should be done
+            periodically.</li>
+          <li><i class="mr-1 fas fa-book-medical"></i>Avoid drinking alcohol and smoking cigarettes.</li>
+          <li><i class="mr-1 fas fa-book-medical"></i>Controlling other comorbidities is also important.</li>
+          <li><i class="mr-1 fas fa-book-medical"></i>Follow our diet-chart, best advised for diabetic patients &nbsp; <a href="/resources/diet-chart-kannada.pdf" download="diet-chart-kannada" title="Download"><i class="fas fa-download" style="color: #0061a8"></i></a> </li>
+        </ul>
+      </div>
+    </div>
+    <%- include('partials/footer')  %>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

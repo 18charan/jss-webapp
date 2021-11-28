@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/index.css" />
+
+    <title>JSS WEBAPP</title>
+  </head>
+  <body>
+    <%- include('./partials/navbar') %>
+    <div class="row mx-0 my-3">
+      <div class="col-6 m-0" style="text-align: right">
+        <button
+          class="mr-3 my-2 p-2 login-signup-button"
+          data-parent = "login-box"
+        >
+          <i class="fas fa-sign-in-alt fa-md mr-2"></i>LOGIN
+        </button>
+      </div>
+      <div class="col-6 m-0" style="text-align: left">
+        <button class="ml-2 my-2 p-2 login-signup-button" data-parent = "signup-box">
+          SIGNUP<i class="fas fa-user-plus fa-sm ml-2"></i>
+        </button>
+      </div>
+    </div>
+    <div>
+    </div>
+    <div id="motive" class="container my-4 my-sm-5">
+      <p id="motive-text" class="py-1">
+        Our aim is to develop an evidence-based architectural AI model for decisional support system for
+        diabetes diagnosis and risk calculation at an individual level. <br>
+        With the advancement of smartphones, it is clear that people will be able to get a smart
+        solution for their medical needs. This is where the software assists the customer by offering
+        essential assistance in their medical lives.
+      </p>
+    </div>
+    <div class="my-2" style="text-align: center; color: #d3e0ea">&#9670&ensp;&ensp;&#9670&ensp;&ensp;&#9670</div>
+
+    <div class="container p-0 my-2">
+      <div id="about-us" class="my-4 px-1 Cards">
+        <div class="header-holder mb-2">
+          <h3 class="my-0 header">About Us</h3>
+          <i class="fas fa-info fa-md ml-2 header-icon"></i>
+        </div>
+        <div class="mx-auto my-3 my-sm-4 p-4 col-11 col-sm-7 content-box">
+          <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis veritatis culpa sequi tenetur voluptate nobis? Soluta quae, laboriosam, saepe suscipit vitae, perferendis blanditiis porro nihil incidunt distinctio omnis iste harum.</p>
+        </div>
+      </div>
+
+      
+
+      <div id="our-doctors" class="my-5 px-1 Cards">
+        <div class="header-holder mb-2">
+          <h3 class="my-0 header">Our Doctors</h3>
+          <i class="fas fa-user-md fa-md ml-2 header-icon"></i>
+        </div>
+        <div id="card-holder" class="mx-auto my-3 my-sm-4 py-2 col-11 col-sm-7">
+          <div id="card1" class="col-12 m-2 p-4 content-box myCard slide-left-active card-active">
+            <img class="mb-2" src="images/deepak.jpeg" alt="" height="100px" width="100px">
+            <p class="content">
+              <h3 class="doc-name mx-auto mt-2 mb-3">Dr. Deepak Anil</h3>
+              <span class="p-0 col-sm-9 d-block mt-2 doc-info">Post Graduate,
+                Department of Community Medicine,
+                JSS Medical College, Mysuru</span>
+              <span class="d-block mt-2 doc-info"><i style="color: grey" class="fas fa-at"></i> <a style="color: black;" href='mailto:deepakanil7@gmail.com'>deepakanil7@gmail.com</a></span>
+            </p>
+          </div>
+
+          <div id="card2" class="m-2 p-4 content-box myCard slide-right">
+            <img class="mb-2" src="images/sunil.jpg" alt="" height="100px" width="100px">
+            <p class="content">
+              <h3 class="doc-name mx-auto mt-2 mb-3">Dr. Sunil Kumar D <span class="qualification">- MBBS, MD, Ph.D.</span></h3>
+              <span class="p-0 col-sm-9 d-block mt-2 doc-info">
+                Associate Professor, Department of Community Medicine,
+                JSS Medical College, Mysuru</span>
+                <!-- <span class="d-block mt-3 doc-info"><i style="color: grey" class="fas fa-phone-volume"></i> <a style="color: black;" href='tel:+916366366663'>+916366366663 </a></span> -->
+              <span class="d-block mt-0 doc-info"><i style="color: grey" class="fas fa-at"></i> <a style="color: black;" href='mailto:sunilkumard@jssuni.edu.in'> sunilkumard@jssuni.edu.in</a></span>
+            </p>
+          </div>
+
+          <div id="card3" class=" m-2 p-4 content-box myCard slide-right">
+            <img class="mb-2" src="images/rjendra-prasad.jpeg" alt="" height="100px" width="100px">
+            <p class="content">
+              <h3 class="doc-name mx-auto mt-2 mb-3">Dr. Rajendra Prasad S <span class="qualification">- MBBS, MD</span></h3>
+              <span class="p-0 col-sm-9 d-block mt-2 doc-info">Associate Professor, Department of General Medicine,
+              Diabetic clinic,JSS Hospital, Mysuru</span>
+              <span class="d-block mt-2 doc-info"><i style="color: grey" class="fas fa-at"></i> <a style="color: black;" href='mailto:srajenaprasad@jssuni.edu.in'>srajenaprasad@jssuni.edu.in</a></span>
+            </p>
+          </div>
+          
+          <div id="card4" class="m-2 p-4 content-box myCard slide-right">
+            <img class="mb-2" src="images/mr-narayana-murthy.jpeg" alt="" height="100px" width="100px">
+            <p class="content">
+              <h3 class="doc-name mx-auto mt-2 mb-3">Dr. M.R. Narayana Murthy<span class="qualification">- MBBS, MD</span></h3>
+              <span class="p-0 col-sm-9 d-block mt-2 doc-info">Professor and Head,
+                Department of Community Medicine
+                JSS Medical College, Mysuru.</span>
+              <span class="d-block mt-2 doc-info"><i style="color: grey" class="fas fa-at"></i> <a style="color: black;" href='mailto:mrnarayanamurthy@jssuni.edu.in'>mrnarayanamurthy@jssuni.edu.in</a></span>
+            </p>
+          </div>
+
+          <div id="card5" class="m-2 p-4 content-box myCard slide-right">
+            <img class="mb-2" src="images/basavana-gowdapa.jpeg" alt="" height="100px" width="100px">
+            <p class="content">
+              <h3 class="doc-name mx-auto mt-2 mb-3">Dr. Basavana Gowdappa H<span class="qualification">- MBBS, MD</span></h3>
+              <span class="p-0 col-sm-9 d-block mt-2 doc-info">Principal,
+                JSS Medical College, Mysuru</span>
+              <span class="d-block mt-2 doc-info"><i style="color: grey" class="fas fa-at"></i> <a style="color: black;" href='mailto:hbgowdappa@jssuni.edu.in'>hbgowdappa@jssuni.edu.in</a></span>
+            </p>
+          </div>
+
+          <i id="carousel-nav-left" class="fas fa-chevron-left fa-lg carousel-nav d-none" title="Previous"></i>
+          <i id="carousel-nav-right" class="fas fa-chevron-right fa-lg carousel-nav" title="Next"></i>
+      </div>
+
+        
+      </div>
+    </div>
+
+    <div class="my-2" style="text-align: center; color: #d3e0ea">&#9670&ensp;&ensp;&#9670&ensp;&ensp;&#9670</div>
+
+    <%- include('./partials/footer') %>
+
+    <div id="login-box-holder" class="m-0 px-4 myModalHolder d-none">
+
+      <div id="login-box" class="mx-auto p-4 myModal">
+        <div class="m-0 p-0 d-none loader">
+          <img src="images/loading.svg" height="60px" width="60px" alt="Loading">
+        </div>
+        <i class="fas fa-times mb-3 ml-auto d-block Close" title="Close" data-parent="login-box"></i>
+        <div class="row my-0 mx-auto" style="justify-content: center;">
+          <div class="p-0 col-11">
+            <span class="d-block mt-4 mb-1 ml-1 placeholder"
+          >ph-No<i class="fas fa-phone-alt ml-1"></i
+        ></span>
+        <input class="mx-0 px-3 py-2 d-block col-12" type="text" name="phNo" form="login-form" required minlength="10" maxlength="10"/>
+          </div>
+
+          <div class="p-0 col-11">
+            <span class="d-block mt-3 mb-1 ml-1 placeholder"
+          >Password<i class="fas fa-lock ml-1"></i
+        ></span>
+        <input
+        id="login-form-password"
+          class="mx-0 px-3 py-2 d-block col-12"
+          type="password"
+          name="password" form="login-form" required
+        />
+        <i class="fas fa-eye password-toggle" data-toggle="#login-form-password"></i>
+          </div>
+        </div>
+        
+        
+        <button class="mt-4 mb-1 py-2 px-3 enter-buttons" form="login-form">LOGIN</button>
+      </div>
+    </div>
+
+    <div id="signup-box-holder" class="m-0 px-4 myModalHolder d-none">
+      <div id="signup-box" class="mx-auto px-4 pt-4 pb-3 myModal">
+        <div class="m-0 p-0 d-none loader">
+          <img src="images/loading.svg" height="60px" width="60px" alt="Loading">
+        </div>
+        <i class="fas fa-long-arrow-alt-left fa-lg mb-3 d-none back-arrow" title="Go Back"></i>
+        <i class="fas fa-times mb-3 d-block Close" title="Close" data-parent="signup-box"></i>
+
+        <div id="signup1" class="row mb-0 mt-3 mx-auto signup-child-box signup-active" style="justify-content: center;">
+        
+
+          <div class="p-0 col-8" style="display: inline-block">
+            <span class="d-block mt-0 mb-1 ml-1 placeholder"
+            >Your Name<i class="fas fa-signature fa-lg ml-1"></i
+            ></span>
+            <input class="mx-0 px-3 py-2 d-block col-12" type="text" name="name" form="signup1-form" required/>
+          </div>
+        
+          <div class="p-0 ml-3 col-3 col-sm-2" style="display: inline-block">
+            <span class="d-block mt-0 mb-1 ml-1 placeholder"
+            >Age<i class="fas fa-sort-numeric-up-alt ml-1"></i
+            ></span>
+            <input class="mx-0 px-3 py-2 d-block col-12" type="text" name="age" form="signup1-form" required maxlength="3" />
+          </div>
+
+          <div class="p-0 col-11 col-sm-10">
+            <span class="d-block mt-3 mb-1 ml-2 placeholder"
+            >ph-No<i class="fas fa-phone-alt ml-1"></i
+            ></span>
+            <input class="mx-0 px-3 py-2 d-block col-12" type="text" name="phNo" form="signup1-form" required minlength="10" maxlength="10" />
+          </div>
+
+          <div class="p-0 col-11 col-sm-10">
+            <span class="d-block mt-3 mb-1 ml-1 placeholder"
+              >Password<i class="fas fa-lock ml-1"></i
+            ></span>
+            <input
+            id="signup-form-password"
+              class="mx-0 px-3 py-2 d-block col-12"
+              type="password"
+              name="password" form="signup1-form" required
+            />
+            <i class="fas fa-eye password-toggle" data-toggle="#signup-form-password"></i>
+          </div>
+
+          <div class="p-0 col-11 col-sm-10">
+            <span class="d-block mt-3 mb-1 ml-1 placeholder"
+              >Confirm Password<i class="fas fa-lock ml-1"></i
+            ></span>
+            <input
+            id="signup-form-confirmPassword"
+              class="mx-0 px-3 py-2 d-block col-12"
+              type="password"
+              name="confirmPassword" form="signup1-form" required
+            />
+            <i class="fas fa-eye password-toggle" data-toggle="#signup-form-confirmPassword"></i>
+          </div>
+
+          <button class="mt-4 mb-1 py-2 px-3 enter-buttons signup-next" form="signup1-form">Next</button>
+        </div>
+        
+        <div id="signup2" class="row mb-0 mt-3 mx-auto signup-child-box slide-right" style="justify-content: center;">
+          <div class="p-0 col-11">
+            <span class="d-block mt-0 mb-2 ml-1 placeholder"
+            >Sex<i class="fas fa-venus-mars fa-lg ml-1"></i
+            ></span>
+            <div class="p-0 col-12" style="clear: both">
+              <input class="myRadio" id="male" type="radio" name="sex" value="Male" form="signup2-form" required/>
+              <label for="male">Male</label>
+              <input class="ml-2 ml-sm-3 myRadio" id="female" type="radio" name="sex" value="Female" form="signup2-form" required/>
+              <label for="female">Female</label>
+              <input class="ml-2 ml-sm-3 myRadio" id="other" type="radio" name="sex" value="Other" form="signup2-form" required/>
+              <label for="other">Other</label>
+            </div>
+            
+          </div>
+
+          <div class="p-0 col-11" style="display: inline-block">
+            <span class="d-block mt-2 mb-1 ml-1 placeholder"
+            >Address<i class="fas fa-map-pin fa-lg ml-1"></i
+            ></span>
+            <textarea class="mx-0 px-3 py-2 d-block col-12" name="address" rows="3" form="signup2-form" required></textarea>
+          </div>
+
+          <div class="p-0 col-11">
+            <span class="d-block mt-2 mb-2 ml-1 placeholder"
+            >Marital status<i class="fas fa-ring fa-lg ml-1"></i
+            ></span>
+            <div class="p-0 col-12" style="clear: both;">
+              <input class="myRadio" id="married" type="radio" name="maritalStatus" value="Married" form="signup2-form" required/>
+              <label class="col-4 px-0" for="married">Married</label>
+              <input class="myRadio" id="unmarried" type="radio" name="maritalStatus" value="Unmarried" form="signup2-form" required/>
+              <label class="col-4 px-0" for="unmarried">Unmarried</label>
+            </div>
+            <div class="p-0 col-12" style="clear: both">
+              <input class="myRadio" id="divorced" type="radio" name="maritalStatus" value="Divorced" form="signup2-form" required/>
+              <label class="col-4 px-0" for="divorced">Divorced</label>
+              <input class="myRadio" id="widowed" type="radio" name="maritalStatus" value="Widowed" form="signup2-form" required/>
+              <label class="col-4 px-0" for="widowed">Widowed</label>
+            </div>
+            
+          </div>
+
+          <div class="p-0 col-11">
+            <span class="d-block mt-2 mb-2 ml-1 placeholder"
+            >Religion<i class="fas fa-praying-hands fa-lg ml-1"></i
+            ></span>
+            <div class="p-0 col-12" style="clear: both">
+              <input class="myRadio" id="hindu" type="radio" name="religion" value="Hindu" form="signup2-form" required/>
+              <label for="hindu">Hindu</label>
+              <input class="ml-2 ml-sm-3 myRadio" id="christian" type="radio" name="religion" value="Christian" form="signup2-form" required/>
+              <label for="christian">Christian</label><br>
+              <input class="ml-2 ml-sm-3 myRadio" id="muslim" type="radio" name="religion" value="Muslim" form="signup2-form" required/>
+              <label for="muslim">Muslim</label>
+            </div>
+            
+          </div>
+          <button class="mt-2 mb-0 py-2 px-3 enter-buttons signup-next" form="signup2-form" required>Next</button>
+        </div>
+        
+        <div id="signup3" class="row mb-0 mt-3 mx-auto signup-child-box slide-right" style="justify-content: center;">
+
+          <div class="p-0 col-11">
+            <span class="d-block mt-0 mb-2 ml-1 placeholder"
+            >Educational Qualification<i class="fas fa-graduation-cap fa-lg ml-1"></i
+            ></span>
+            <select class="form-select mx-0 px-3 py-2 d-block col-12" name="educationalQualification" aria-label="Default select example" form="signup3-form" required>
+              <option value="">Select your highest qualification</option>
+              <% for(let i = 0; i < educationList.length; ++i){ %>
+                <option value=<%= educationList[i]._id %>><%= educationList[i].education %></option>
+              <% } %>
+            </select>
+          </div>
+
+          <div class="p-0 col-11">
+            <span class="d-block mt-2 mb-2 ml-1 placeholder"
+            >Occupation<i class="fas fa-briefcase fa-lg ml-1"></i
+            ></span>
+            <div class="p-0 col-12" style="clear: both; text-align: left; white-space: nowrap;">
+              <% for(let i = 0; i < occupationList.length; ++i){ %>
+                <input class="ml-2 ml-sm-3 myRadio" id=<%= occupationList[i]._id %> type="radio" name="occupation" value=<%= occupationList[i]._id %> form="signup3-form" required/>
+                <label for=<%= occupationList[i]._id %>><%= occupationList[i].occupation %></label><br>
+              <% } %>
+            </div>
+          </div>
+
+          <div class="p-0 col-11 col-sm-10">
+            <span class="d-block mt-2 mb-2 ml-1 placeholder"
+            >Total monthly family income<i class="fas fa-rupee-sign ml-1"></i
+            ></span>
+            <input class="mx-0 px-3 py-2 d-block col-6" type="text" name="monthlyIncome" form="signup3-form" required />
+          </div>
+
+          <button class="mt-3 mb-2 py-2 px-3 enter-buttons signup-next" form="signup3-form">Sign-Up</button>
+
+        </div>
+     
+      </div>
+    </div>
+    <form action="/login" id="login-form" method="post"></form>
+    <form onsubmit="return false" action="/" id="signup1-form" method="post"></form>
+    <form onsubmit="return false" action="/" id="signup2-form" method="post"></form>
+    <form onsubmit="return false" action="/" id="signup3-form" method="post"></form>
+    <form action="/signup" id="signup-form" method="post"></form>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/control.js"></script>
+  </body>
+</html>
+
+
+<!-- <input class="ml-2 ml-sm-3 myRadio" id="Legislators/Senior Officials/Managers" type="radio" name="occupation" value="Legislators/Senior Officials/Managers" form="signup3-form" required/>
+              <label for="Legislators/Senior Officials/Managers">Legislators/Senior Officials/Managers</label><br>
+              <input class="ml-2 ml-sm-3 myRadio" id="Proffersionals" type="radio" name="occupation" value="Proffersionals" form="signup3-form" required/>
+              <label for="Proffersionals">Proffersionals</label><br>
+              <input class="ml-2 ml-sm-3 myRadio" id="Technicians/Associate Professionals" type="radio" name="occupation" value="Technicians/Associate Professionals" form="signup3-form" required/>
+              <label for="Technicians/Associate Professionals">Technicians/Associate Professionals</label><br>
+              <input class="ml-2 ml-sm-3 myRadio" id="Clerks" type="radio" name="occupation" value="Clerks" form="signup3-form" required/>
+              <label for="Clerks">Clerks</label><br>
+              <input class="ml-2 ml-sm-3 myRadio" id="Skilled/Sales workers" type="radio" name="occupation" value="Skilled/Sales workers" form="signup3-form" required/>
+              <label for="Skilled/Sales workers">Skilled/Sales workers</label><br>
+              <input class="ml-2 ml-sm-3 myRadio" id="Skilled agricultural/Fishery workers" type="radio" name="occupation" value="Skilled agricultural/Fishery workers" form="signup3-form" required/>
+              <label for="Skilled agricultural/Fishery workers">Skilled agricultural/Fishery workers</label><br>
+              <input class="ml-2 ml-sm-3 myRadio" id="Craft and related Trade workers" type="radio" name="occupation" value="Craft and related Trade workers" form="signup3-form" required/>
+              <label for="Craft and related Trade workers">Craft and related Trade workers</label><br>
+              <input class="ml-2 ml-sm-3 myRadio" id="Plant & Machine operators & assemblers" type="radio" name="occupation" value="Plant & Machine operators & assemblers" form="signup3-form" required/>
+              <label for="Plant & Machine operators & assemblers">Plant & Machine operators & assemblers</label><br>
+              <input class="ml-2 ml-sm-3 myRadio" id="Elementary Occupation" type="radio" name="occupation" value="Elementary Occupation" form="signup3-form" required/>
+              <label for="Elementary Occupation">Elementary Occupation</label><br>
+              <input class="ml-2 ml-sm-3 myRadio" id="Unemployed" type="radio" name="occupation" value="Unemployed" form="signup3-form" required/>
+              <label for="Unemployed">Unemployed</label> -->
+
+              <!-- 
+              <option value="Profession or Honours">Profession or Honours</option>
+              <option value="Graduate">Graduate</option>
+              <option value="Intermediate Diploma">Intermediate Diploma</option>
+              <option value="High School">High School</option>
+              <option value="Middle School">Middle School</option>
+              <option value="Primary School">Primary School</option>
+              <option value="Illiterate">Illiterate</option> -->
